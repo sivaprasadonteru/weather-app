@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <div class="row nav-bar">
+        <div class="col-md-12">
+            <h5>Weather Report</h5>
+        </div>
+    </div>
+    <div class="row panelheader">
+        <div class="col-md-4 mt-2" *ngFor="let item of weatherArrayPanel; let i= index">
+            <div class="panelBody" *ngIf="item.isView; else editMode">
+                <div class="imageSize" *ngIf="item.temperature; else noData"
+                    [ngStyle]="{'background-image': 'url('+getBgColor(item)+')'}">
+                    <div class="pt-3">
+                        <h5 class="text-center" style="font-size: 20px;"><span>{{item.temperature}}°C</span><img
+                                height="75px" [src]="'http://openweathermap.org/img/wn/'+ item.icon + '@2x.png'" /></h5>
+                        <h5 class="text-center"> <button class="btn btn-info cursor"
+                                (click)="item.isView = false">Edit</button></h5>
+                    </div>
+                </div>
+                <ng-template #noData>
+                    <div class="cursor" (click)="item.isView = false">
+                        <p class="p-5 text-center"></p>
+                    </div>
+                </ng-template>
+            </div>
+            <ng-template #editMode>
+                <div class="panelBody">
+                    <div class="form-group row pt-5">
+                        <div class="col-sm-8 text-center mt-4 pl-5">
+                            <input class="form-control" placeholder="Enter City Name" [(ngModel)]="item.city"
+                                [name]="'cityName' + i">
+                        </div>
+                        <div class="col-sm-3 mt-3">
+                            <p type="button" class="button cursor" (click)="getWeatherBasedOnCity(item.city, i)">Get
+                                weather</p>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>

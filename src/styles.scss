@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+.col-form-label {
+    padding-top: calc(.375rem + 1px);
+    padding-bottom: calc(.375rem + 1px);
+    margin-bottom: 0;
+    font-size: 18px;
+    line-height: 1.5;
+}
+.nav-bar{
+    height: 75px;
+}
+.nav-bar h5{
+    
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    padding-top:5px;
+}
+.heading{
+    text-align: center;
+    
+}
+.container-fluid{
+    height: 670px;
+    background-image: url(assets/background.webp);
+    
+}
+.form-control{
+    font-size: 12px;
+    line-height: 0.5;
+}
+.button {
+    font-size: 12px;
+    background-color:black;
+    border-radius: 10px;
+    height: 29px;
+    color: #fff;
+    text-align: center;
+    padding: 4px;
+    margin-top: 8px;
+}
+.imageSize{
+    height: 161px;
+    border-radius: 15px;
+}
+
+.panelBody{
+    width: 100%;
+	box-shadow: 0px 1px 4px 0px #cccccc;
+    background-color: blanchedalmond;
+    height: 160px;
+    border-radius: 15px ;
+}
